@@ -1,0 +1,8 @@
+.DS_Store
+.tmp
+.yardoc
+pkg
+tmp
+/Gemfile.lock
+/*.gem
+/.byebug_history
