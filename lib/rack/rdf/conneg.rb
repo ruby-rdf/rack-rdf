@@ -32,7 +32,7 @@ module Rack; module RDF
     # @param  [#call]                  app
     # @param  [Hash{Symbol => Object}] options
     #   Other options passed to writer.
-    # @param [String] :default (DEFAULT_CONTENT_TYPE) Specific content type
+    # @option options [String] :default (DEFAULT_CONTENT_TYPE) Specific content type
     # @option options [RDF::Format, #to_sym] :format Specific RDF writer format to use
     def initialize(app, options)
       @app, @options = app, options
@@ -109,9 +109,9 @@ module Rack; module RDF
     # @param  [Hash{String => String}] env
     # @param  [Hash{String => Object}] headers
     # @yield |writer, content_type|
-    # @yield_param [RDF::Writer] writer
-    # @yield_param [String] content_type from accept media-range without parameters
-    # @yield_param [Hash{Symbol => String}] accept_params from accept media-range
+    # @yieldparam [RDF::Writer] writer
+    # @yieldparam [String] content_type from accept media-range without parameters
+    # @yieldparam [Hash{Symbol => String}] accept_params from accept media-range
     # @see    http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html
     def find_writer(env, headers)
       if @options[:format]
@@ -143,8 +143,8 @@ module Rack; module RDF
     #
     # @param  [String, #to_s] content_type
     # @yield |writer, content_type|
-    # @yield_param [RDF::Writer] writer
-    # @yield_param [String] content_type (including media-type parameters)
+    # @yieldparam [RDF::Writer] writer
+    # @yieldparam [String] content_type (including media-type parameters)
     def find_writer_for_content_type(content_type)
       ct, *params = content_type.split(';').map(&:strip)
       accept_params = params.inject({}) do |memo, pv|

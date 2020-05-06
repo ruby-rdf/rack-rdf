@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.date               = File.mtime('VERSION').strftime('%Y-%m-%d')
 
   gem.name               = 'rack-rdf'
-  gem.homepage           = 'http://ruby-rdf.github.com/rack-rdf'
+  gem.homepage           = 'http://github.com/ruby-rdf/rack-rdf'
   gem.license            = 'Unlicense'
   gem.summary            = 'Linked Data content negotiation for Rack applications.'
   gem.description        = 'Rack middleware for Linked Data content negotiation.'
