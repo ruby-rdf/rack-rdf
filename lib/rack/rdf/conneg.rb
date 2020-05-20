@@ -16,7 +16,7 @@ module Rack; module RDF
   #     use Rack::RDF::ContentNegotiation, :format => RDF::NTriples::Format
   #     use Rack::RDF::ContentNegotiation, :default => 'application/rdf+xml'
   #
-  # @see http://www4.wiwiss.fu-berlin.de/bizer/pub/LinkedDataTutorial/
+  # @see https://www4.wiwiss.fu-berlin.de/bizer/pub/LinkedDataTutorial/
   # @see https://www.rubydoc.info/github/rack/rack/master/file/SPEC
   class ContentNegotiation
     DEFAULT_CONTENT_TYPE = "application/n-triples" # N-Triples
@@ -47,7 +47,7 @@ module Rack; module RDF
     #
     # @param  [Hash{String => String}] env
     # @return [Array(Integer, Hash, #each)] Status, Headers and Body
-    # @see    http://rack.rubyforge.org/doc/SPEC.html
+    # @see    https://rubydoc.info/github/rack/rack/file/SPEC
     def call(env)
       env['ORDERED_CONTENT_TYPES'] = parse_accept_header(env['HTTP_ACCEPT']) if env.has_key?('HTTP_ACCEPT')
       response = app.call(env)
@@ -112,7 +112,7 @@ module Rack; module RDF
     # @yieldparam [RDF::Writer] writer
     # @yieldparam [String] content_type from accept media-range without parameters
     # @yieldparam [Hash{Symbol => String}] accept_params from accept media-range
-    # @see    http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html
+    # @see    https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html
     def find_writer(env, headers)
       if @options[:format]
         format = @options[:format]
@@ -164,7 +164,7 @@ module Rack; module RDF
     #
     # @param  [String, #to_s] header
     # @return [Array<String>]
-    # @see    http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.1
+    # @see    https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.1
     def parse_accept_header(header)
       entries = header.to_s.split(',')
       entries = entries.map { |e| accept_entry(e) }.sort_by(&:last).map(&:first)
