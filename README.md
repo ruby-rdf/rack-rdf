@@ -7,15 +7,16 @@ Sinatra.
 
 This version is based on [rack-linkeddata][] without the hard dependency on the [linkeddata][] gem, to allow applications to better manage their dependencies
 
-* <http://github.com/datagraph/rack-rdf>
+* <https://github.com/ruby-rdf/rack-rdf>
 
-[![Gem Version](https://badge.fury.io/rb/rack-rdf.png)](http://badge.fury.io/rb/rack-rdf)
-[![Build Status](https://travis-ci.org/ruby-rdf/rack-rdf.png?branch=master)](http://travis-ci.org/ruby-rdf/rack-rdf)
+[![Gem Version](https://badge.fury.io/rb/rack-rdf.png)](https://badge.fury.io/rb/rack-rdf)
+[![Build Status](https://github.com/ruby-rdf/rack-rdf/workflows/CI/badge.svg?branch=develop)](https://github.com/ruby-rdf/rack-rdf/actions?query=workflow%3ACI)
+[![Gitter chat](https://badges.gitter.im/ruby-rdf/rdf.png)](https://gitter.im/ruby-rdf/rdf)
 
 ## Features
 
 * Implements [HTTP content negotiation][conneg] for RDF content types.
-* Supports all [RDF.rb][]-compatible serialization formats.
+* Supports all [RDF.rb][] compatible serialization formats.
 * Compatible with any Rack application and any Rack-based framework.
 
 ## Examples
@@ -90,19 +91,19 @@ for N-Triples, N-Quads, Turtle, RDF/XML, RDF/JSON, JSON-LD, RDFa, TriG and TriX.
 
 ##Documentation
 
-<http://http://rubydoc.info/github/ruby-rdf/rack-rdf/>
+<https://rubydoc.info/github/ruby-rdf/rack-rdf/>
 
 * {Rack::RDF}
   * {Rack::RDF::ContentNegotiation}
 
 ## Dependencies
 
-* [Rack](http://rubygems.org/gems/rack) (~> 2.0)
-* [RDF](http://rubygems.org/gems/rdf) (~> 3.1)
+* [Rack](https://rubygems.org/gems/rack) (~> 2.0)
+* [RDF](https://rubygems.org/gems/rdf) (~> 3.1)
 
 ## Installation
 
-The recommended installation method is via [RubyGems](http://rubygems.org/).
+The recommended installation method is via [RubyGems](https://rubygems.org/).
 To install the latest official release of the gem, do:
 
     % [sudo] gem install rack-rdf
@@ -116,7 +117,7 @@ To get a local working copy of the development repository, do:
 Alternatively, download the latest development version as a tarball as
 follows:
 
-    % wget http://github.com/ruby-rdf/rack-rdf/tarball/master
+    % wget https://github.com/ruby-rdf/rack-rdf/tarball/master
 
 ## Contributing
 This repository uses [Git Flow](https://github.com/nvie/gitflow) to mange development and release activity. All submissions _must_ be on a feature branch based on the _develop_ branch to ease staging and integration.
@@ -131,31 +132,33 @@ This repository uses [Git Flow](https://github.com/nvie/gitflow) to mange develo
   list in the the `README`. Alphabetical order applies.
 * Do note that in order for us to merge any non-trivial changes (as a rule
   of thumb, additions larger than about 15 lines of code), we need an
-  explicit [public domain dedication][PDD] on record from you.
+  explicit [public domain dedication][PDD] on record from you,
+  which you will be asked to agree to on the first commit to a repo within the organization.
+  Note that the agreement applies to all repos in the [Ruby RDF](https://github.com/ruby-rdf/) organization.
 
 ## References
 
-* <http://www.w3.org/DesignIssues/LinkedData.html>
-* <http://linkeddata.org/docs/how-to-publish>
-* <http://linkeddata.org/conneg-303-redirect-code-samples>
-* <http://www.w3.org/TR/cooluris/>
-* <http://www.w3.org/TR/swbp-vocab-pub/>
-* <http://patterns.dataincubator.org/book/publishing-patterns.html>
+* <https://www.w3.org/DesignIssues/LinkedData.html>
+* <https://linkeddata.org/docs/how-to-publish>
+* <https://linkeddata.org/conneg-303-redirect-code-samples>
+* <https://www.w3.org/TR/cooluris/>
+* <https://www.w3.org/TR/swbp-vocab-pub/>
+* <https://patterns.dataincubator.org/book/publishing-patterns.html>
 
 ## Authors
 
-* [Arto Bendiken](http://github.com/bendiken) - <http://ar.to/>
-* [Gregg Kellogg](http://github.com/gkellogg) - <http://greggkellogg.net/>
+* [Arto Bendiken](https://github.com/artob) - <https://ar.to/>
+* [Gregg Kellogg](https://github.com/gkellogg) - <https://greggkellogg.net/>
 
 ## License
 
 This is free and unencumbered public domain software. For more information,
-see <http://unlicense.org/> or the accompanying {file:UNLICENSE} file.
+see <https://unlicense.org/> or the accompanying {file:UNLICENSE} file.
 
-[Rack]:           http://rack.github.com/
-[RDF.rb]:         http://ruby-rdf.github.com/rdf/
-[Linked Data]:    http://linkeddata.org/
-[conneg]:         http://en.wikipedia.org/wiki/Content_negotiation
-[YARD]:           http://yardoc.org/
-[YARD-GS]:        http://rubydoc.info/docs/yard/file/docs/GettingStarted.md
-[PDD]:            http://unlicense.org/#unlicensing-contributions
+[Rack]:           https://rack.github.com/
+[RDF.rb]:         https://ruby-rdf.github.com/rdf/
+[Linked Data]:    https://linkeddata.org/
+[conneg]:         https://en.wikipedia.org/wiki/Content_negotiation
+[YARD]:           https://yardoc.org/
+[YARD-GS]:        https://rubydoc.info/docs/yard/file/docs/GettingStarted.md
+[PDD]:            https://unlicense.org/#unlicensing-contributions

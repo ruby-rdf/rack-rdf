@@ -16,7 +16,7 @@ module Rack; module RDF
   #     use Rack::RDF::ContentNegotiation, :format => RDF::NTriples::Format
   #     use Rack::RDF::ContentNegotiation, :default => 'application/rdf+xml'
   #
-  # @see http://www4.wiwiss.fu-berlin.de/bizer/pub/LinkedDataTutorial/
+  # @see https://www4.wiwiss.fu-berlin.de/bizer/pub/LinkedDataTutorial/
   # @see https://www.rubydoc.info/github/rack/rack/master/file/SPEC
   class ContentNegotiation
     DEFAULT_CONTENT_TYPE = "application/n-triples" # N-Triples
@@ -32,7 +32,7 @@ module Rack; module RDF
     # @param  [#call]                  app
     # @param  [Hash{Symbol => Object}] options
     #   Other options passed to writer.
-    # @param [String] :default (DEFAULT_CONTENT_TYPE) Specific content type
+    # @option options [String] :default (DEFAULT_CONTENT_TYPE) Specific content type
     # @option options [RDF::Format, #to_sym] :format Specific RDF writer format to use
     def initialize(app, options)
       @app, @options = app, options
@@ -47,7 +47,7 @@ module Rack; module RDF
     #
     # @param  [Hash{String => String}] env
     # @return [Array(Integer, Hash, #each)] Status, Headers and Body
-    # @see    http://rack.rubyforge.org/doc/SPEC.html
+    # @see    https://rubydoc.info/github/rack/rack/file/SPEC
     def call(env)
       env['ORDERED_CONTENT_TYPES'] = parse_accept_header(env['HTTP_ACCEPT']) if env.has_key?('HTTP_ACCEPT')
       response = app.call(env)
@@ -109,10 +109,10 @@ module Rack; module RDF
     # @param  [Hash{String => String}] env
     # @param  [Hash{String => Object}] headers
     # @yield |writer, content_type|
-    # @yield_param [RDF::Writer] writer
-    # @yield_param [String] content_type from accept media-range without parameters
-    # @yield_param [Hash{Symbol => String}] accept_params from accept media-range
-    # @see    http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html
+    # @yieldparam [RDF::Writer] writer
+    # @yieldparam [String] content_type from accept media-range without parameters
+    # @yieldparam [Hash{Symbol => String}] accept_params from accept media-range
+    # @see    https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html
     def find_writer(env, headers)
       if @options[:format]
         format = @options[:format]
@@ -143,8 +143,8 @@ module Rack; module RDF
     #
     # @param  [String, #to_s] content_type
     # @yield |writer, content_type|
-    # @yield_param [RDF::Writer] writer
-    # @yield_param [String] content_type (including media-type parameters)
+    # @yieldparam [RDF::Writer] writer
+    # @yieldparam [String] content_type (including media-type parameters)
     def find_writer_for_content_type(content_type)
       ct, *params = content_type.split(';').map(&:strip)
       accept_params = params.inject({}) do |memo, pv|
@@ -164,7 +164,7 @@ module Rack; module RDF
     #
     # @param  [String, #to_s] header
     # @return [Array<String>]
-    # @see    http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.1
+    # @see    https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.1
     def parse_accept_header(header)
       entries = header.to_s.split(',')
       entries = entries.map { |e| accept_entry(e) }.sort_by(&:last).map(&:first)
