@@ -98,8 +98,8 @@ for N-Triples, N-Quads, Turtle, RDF/XML, RDF/JSON, JSON-LD, RDFa, TriG and TriX.
 
 ## Dependencies
 
-* [Rack](https://rubygems.org/gems/rack) (~> 2.0)
-* [RDF](https://rubygems.org/gems/rdf) (~> 3.1)
+* [Rack](https://rubygems.org/gems/rack) (~> 2.2)
+* [RDF](https://rubygems.org/gems/rdf) (~> 3.2)
 
 ## Installation
 
