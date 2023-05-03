@@ -9,7 +9,7 @@ This version is based on [rack-linkeddata][] without the hard dependency on the 
 
 * <https://github.com/ruby-rdf/rack-rdf>
 
-[![Gem Version](https://badge.fury.io/rb/rack-rdf.png)](https://badge.fury.io/rb/rack-rdf)
+[![Gem Version](https://badge.fury.io/rb/rack-rdf.svg)](https://badge.fury.io/rb/rack-rdf)
 [![Build Status](https://github.com/ruby-rdf/rack-rdf/workflows/CI/badge.svg?branch=develop)](https://github.com/ruby-rdf/rack-rdf/actions?query=workflow%3ACI)
 [![Gitter chat](https://badges.gitter.im/ruby-rdf/rdf.png)](https://gitter.im/ruby-rdf/rdf)
 
