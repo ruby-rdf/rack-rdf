@@ -25,13 +25,13 @@ Gem::Specification.new do |gem|
   gem.files              = %w(AUTHORS CREDITS README.md UNLICENSE VERSION) + Dir.glob('lib/**/*.rb')
   gem.require_paths      = %w(lib)
 
-  gem.required_ruby_version      = '>= 2.5'
+  gem.required_ruby_version      = '>= 2.6'
   gem.requirements               = []
   gem.add_runtime_dependency     'rdf',        '~> 3.2'
-  gem.add_runtime_dependency     'rack',       '>= 2.2', '< 4'
+  gem.add_runtime_dependency     'rack',       '~> 3.0'
 
   gem.add_development_dependency 'yard' ,      '~> 0.9'
-  gem.add_development_dependency 'rspec',      '~> 3.10'
-  gem.add_development_dependency 'rack-test',  '>= 1.1', '< 3'
+  gem.add_development_dependency 'rspec',      '~> 3.12'
+  gem.add_development_dependency 'rack-test',  '~> 2.1'
   gem.post_install_message       = nil
 end
