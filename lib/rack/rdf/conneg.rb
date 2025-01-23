@@ -20,7 +20,7 @@ module Rack; module RDF
   # @see https://www.rubydoc.info/github/rack/rack/master/file/SPEC
   class ContentNegotiation
     DEFAULT_CONTENT_TYPE = "application/n-triples" # N-Triples
-    VARY = {'Vary' => 'Accept'}.freeze
+    VARY = {'vary' => 'Accept'}.freeze
 
     # @return [#call]
     attr_reader :app
@@ -91,7 +91,7 @@ module Rack; module RDF
       end
 
       if result
-        headers = headers.merge(VARY).merge('Content-Type' => content_type)
+        headers = headers.merge(VARY).merge('content-type' => content_type)
         [status, headers, [result]]
       else
         not_acceptable
@@ -224,7 +224,7 @@ module Rack; module RDF
     # @return [Array(Integer, Hash, #each)]
     def http_error(code, message = nil, headers = {})
       message = http_status(code) + (message.nil? ? "\n" : " (#{message})\n")
-      [code, {'Content-Type' => "text/plain"}.merge(headers), [message]]
+      [code, {'content-type' => "text/plain"}.merge(headers), [message]]
     end
 
     ##
